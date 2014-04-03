@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logout</title>
+	<link rel='stylesheet' type='text/css' href='main.css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+<body>
+	<div id='fb-root'></div>
+	<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '825013770847053',
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			xfbml      : true  // parse XFBML
+		});
+
+		FB.getLoginStatus(function(response) {
+			if(response.status === 'connected') {
+				FB.logout(function(response) {
+					document.location.href = 'http://simplepost.dev/';
+				});
+			}
+			else if(response.status == 'not_authorized' || response.status == 'unknown') {
+				document.location.href = 'http://simplepost.dev/';			
+			}
+		});
+	};
+
+	// Load the SDK asynchronously
+	(function(d){
+		console.log('Loading Facebook SDK asynchronously');
+		var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement('script'); js.id = id; js.async = true;
+		js.src = "//connect.facebook.net/en_US/all.js";
+		ref.parentNode.insertBefore(js, ref);
+	}(document));
+  </script>
+</body>
+</html>
