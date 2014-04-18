@@ -2,25 +2,27 @@
 <html>
 <head>
 	<title>SimplePost</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 	<link rel='stylesheet' type='text/css' href='main.css'>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 <body>
 	<div id='fb-root'></div> <!--This div needs to be in the HTML page for Facebook's API to work-->
 	<script src='scripts.js'></script>
-	<div id='container'>
-		<div id='logotype'>SimplePost</div>
-		<div id="pic_container">
-			<div id="album_container">
-				<div id="albums"></div>
-				<div id="individual_album"></div>
+	<div id="main_container">
+		<div id='container'>
+			<div id='logotype'>SimplePost Pictures</div>
+			<div id="pic_container">
+				<div class="inner_folder" id="album_container">
+					<div id="albums"></div>
+					<div id="individual_album"></div>
+				</div>
+				<div class="inner_folder" id="photos"></div>
+				<div class="inner_folder" id="photos_tagged"></div>
+				<div class="inner_folder" id="folders"></div>
 			</div>
-			<div id="photos"></div>
-			<div id="photos_tagged"></div>
-			<div id="folders"></div>
 		</div>
-		
-
 	</div>
 	<!-- <button id="loadMore" onclick="loadPosts()">Load more</button> -->
 </body>
